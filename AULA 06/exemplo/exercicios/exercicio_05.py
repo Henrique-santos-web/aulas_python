@@ -1,5 +1,7 @@
 convidados = []
 
-convidados.append("Caio", "Adelina", "Vincenzo")
+convidados.append("Caio")
+convidados.append()
+convidados.append()
 
 print(convidados)
