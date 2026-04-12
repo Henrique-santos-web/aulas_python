@@ -16,11 +16,12 @@ def cadastrar_usuario():
         try:
             nome_usuario = input("Qual o seu nome? ").strip().isalpha()
 
-            if nome_usuario == True:
+            if nome_usuario:
                 break
             elif nome_usuario == False:
                 print("Digite apenas letras")
-            continue
+        finally:
+            print("Encerrando o crachá...")
 
     return {"nome" : nome_usuario, "idade" : idade_usuario}
 
