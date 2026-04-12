@@ -8,23 +8,26 @@ def cadastrar_usuario():
                 print("Idade inválida")
                 continue
             else:
-                while True:
-                    try:
-                        nome_usuario = input("Qual o seu nome? ")
-                        break
-                    except:
-                        print("Digite apenas letras")
-                        continue
-
+                break
         except ValueError:
             print("Digite apenas números!")
 
-            return nome_usuario, idade_usuario
+    while True:
+        try:
+            nome_usuario = input("Qual o seu nome? ").strip().isalpha()
 
+            if nome_usuario == True:
+                break
+            elif nome_usuario == False:
+                print("Digite apenas letras")
+            continue
 
+    return {"nome" : nome_usuario, "idade" : idade_usuario}
 
-cracha = {
-    "nome": nome_usuario,
-    "idade": idade_usuario
-}
-cadastrar_usuario()
+cadastro = cadastrar_usuario()
+
+print(f"O seu cadastro: {cadastro}")
+
+# *o return não pode ficar dentro do while
+# * se não o primeiro breack já cancela o return e a informação nunca chegará à variável cadastro
+# * assim impedindo o print com o resultado!
