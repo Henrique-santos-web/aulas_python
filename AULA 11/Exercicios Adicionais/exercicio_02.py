@@ -14,14 +14,12 @@ def cadastrar_usuario():
 
     while True:
         try:
-            nome_usuario = input("Qual o seu nome? ").strip().isalpha()
+            nome_usuario = input("Qual o seu nome? ").strip()
 
-            if nome_usuario:
-                break
-            elif nome_usuario == False:
-                print("Digite apenas letras")
-        finally:
+            break
+        except:
             print("Encerrando o crachá...")
+            continue
 
     return {"nome" : nome_usuario, "idade" : idade_usuario}
 
