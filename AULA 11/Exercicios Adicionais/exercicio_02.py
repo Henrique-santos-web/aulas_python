@@ -39,7 +39,7 @@
 def cadastrar_usuario():
     while True:
         try:
-            idade = int(input("Digite sua idade"))
+            idade = int(input("Digite sua idade: "))
 
             if idade < 0 or idade > 120:
                 print("Idade inválida")
