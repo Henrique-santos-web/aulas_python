@@ -3,7 +3,8 @@ def contar_vogais(texto):
     total = 0
     for letra in texto:
         if letra in "aeiou":
-            total += 1
+            total += 1 
+            # esse adicional númerico é porquê a letra a está na posição 0, e ele fará uma comparação pra ver se tem a vogal
     return total  # A função devolve apenas o NÚMERO
 
 
