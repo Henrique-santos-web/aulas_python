@@ -13,7 +13,7 @@ def carregar_dados():
     try:
         with open("meus_filmes.json", "r", encoding="utf-8") as arquivo:
         # esse encoding="utf-8" é para o python entender caracteres especiais e emojis
-            return json.load(arquivo) #* Este "arquivo" vem após o "as" (continuação na def salvar_dados(dados))
+            return json.load(arquivo) #* este return serve para retornar as informações a quem chamar está função, no caso é o main.py
     except:
         print("Arquivo não existe. Criando lista vazia...")
         return []
@@ -52,13 +52,13 @@ def obter_nota_valida():
 
 def adicionar_filmes(catalogo):
     limpar_console()
-    print("--- 🎬 REGISTRA NOVO FILME")
-    titulo = input("Titulo: ").strip()
+    print("--- 🎬 REGISTRAR NOVO FILME ---")
+    titulo = input("Título: ").strip()
 
     for filme in catalogo:
-        if filme['titulo'].loswe() == titulo.lower():
+        if filme['titulo'].lower() == titulo.lower():
             print(f"\n Atenção: o Filme '{filme['titulo']}' já está cadastrado no seu catalogo!")
-            return
+            return #* tentar entender o motivo deste return
         
     genero = input("Gênero (ex: Ação, Comédia, Drama)").strip()
     ano = obter_ano_valido()
