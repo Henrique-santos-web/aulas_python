@@ -11,7 +11,7 @@ def limpar_console():
 def carregar_dados():
     #o try aq é essencial pra caso n ache um arquivo, ao invés de dar erro, vai avisar e continuar da forma que eu quiser
     try:
-        with open("meus_filmes.json", "r", encoding="utf-8") as arquivo:
+        with open(ARQUIVO_DADOS, "r", encoding="utf-8") as arquivo:
         # esse encoding="utf-8" é para o python entender caracteres especiais e emojis
             return json.load(arquivo) #* este return serve para retornar as informações a quem chamar está função, no caso é o main.py
     except:
@@ -22,7 +22,7 @@ def salvar_dados(dados):
     with open(ARQUIVO_DADOS, "w", encoding="utf-8") as arquivo:
         json.dump(dados, arquivo, indent=4, ensure_ascii=False)
         #* Mas qnd eu coloco o "arquivo" aqui, ele vem do with open dessa def ou da def carregar_dados()?
-        # o comando (ensure_ascii=) eu n sei o que faz, então vou pesquisar depois!
+        #* ensure = garantir, ascii = codigo ascii (maçã = ma\u00e7\u00e3), False = deixar a conversão legivel para o ser humano
 
 def obter_ano_valido():
     while True:
@@ -111,7 +111,8 @@ def pesquisar_por_titulo(catalogo):
     #esse _ no inicio da função é pra dizer que ela vai ser usada dentro da pasta dela, e não em outra pasta
 
 
-def pesquisar_por_genero
+def pesquisar_por_genero(catalogo):
+    limpar_console()
 
 
 def pesquisar_por_ano(catalogo):
