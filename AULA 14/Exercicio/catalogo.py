@@ -2,6 +2,7 @@ import os
 import json
 from datetime import date
 
+
 ARQUIVO_DADOS = "meus_filmes.json"
 
 def limpar_console():
@@ -18,11 +19,13 @@ def carregar_dados():
         print("Arquivo não existe. Criando lista vazia...")
         return []
 
+
 def salvar_dados(dados):
     with open(ARQUIVO_DADOS, "w", encoding="utf-8") as arquivo:
         json.dump(dados, arquivo, indent=4, ensure_ascii=False)
         #* Mas qnd eu coloco o "arquivo" aqui, ele vem do with open dessa def ou da def carregar_dados()?
         #* ensure = garantir, ascii = codigo ascii (maçã = ma\u00e7\u00e3), False = deixar a conversão legivel para o ser humano
+
 
 def obter_ano_valido():
     while True:
@@ -125,6 +128,7 @@ def pesquisar_por_ano(catalogo):
         except ValueError:
             print("Digite apenas numeros!")
             continue
+
 
 def _exibir_resultado_pesquisa(resultado):
 
