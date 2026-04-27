@@ -7,6 +7,7 @@ ARQUIVO_DADOS = "meus_filmes.json"
 
 def limpar_console():
     os.system("cls" if os.name == "nt" else "clear")
+    #* Limpar a tela.
 
 
 def carregar_dados():
@@ -23,9 +24,9 @@ def carregar_dados():
 def salvar_dados(dados):
     with open(ARQUIVO_DADOS, "w", encoding="utf-8") as arquivo:
         json.dump(dados, arquivo, indent=4, ensure_ascii=False)
-        #* Mas qnd eu coloco o "arquivo" aqui, ele vem do with open dessa def ou da def carregar_dados()?
-        #* ensure = garantir, ascii = codigo ascii (maçã = ma\u00e7\u00e3), False = deixar a conversão legivel para o ser humano
-
+        #* Esse "dados" está carregando uma lista (no dicionário que está dentro da lista) da def carregar_dados 
+        #* obs: (especificadamente em json.load(arquivo))
+        #* Esse "arquivo" é o que o computador vai salvar (dentro do dicionário que está dentro da lista)
 
 def obter_ano_valido():
     while True:
@@ -46,7 +47,8 @@ def obter_nota_valida():
         try:
             nota = float(input("Nota (0.0 a 5.0): "))
             if nota < 0.0 or nota > 5.0:
-                print("A nota deve estra entre 0.0 ou 5.0")
+                print("A nota deve estar entre 0.0 ou 5.0")
+                continue
 
             return nota
         except ValueError:
@@ -61,7 +63,7 @@ def adicionar_filmes(catalogo):
     for filme in catalogo:
         if filme['titulo'].lower() == titulo.lower():
             print(f"\n Atenção: o Filme '{filme['titulo']}' já está cadastrado no seu catalogo!")
-            return #* tentar entender o motivo deste return
+            return #* Tudo o que acontecer aqui dentro é retornado para quem chamar a def
         
     genero = input("Gênero (ex: Ação, Comédia, Drama)").strip()
     ano = obter_ano_valido()
