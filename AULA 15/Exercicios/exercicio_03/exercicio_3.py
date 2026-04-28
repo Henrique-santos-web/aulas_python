@@ -11,5 +11,7 @@ class Cachorro:
 cachorro1 = Cachorro("Rex", "Caramelo")
 print(f"{cachorro1.nome}")
 
+#! Terminar em casa (e estudar também)
+
 #* metodo = ação
 #* atributo = o que ele tem
