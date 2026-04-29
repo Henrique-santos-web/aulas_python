@@ -1,4 +1,4 @@
-from exercicio_3 import Cachorro
+from Cachorro import Cachorro
 
 cachorro1 = Cachorro("Rex", "Pastor Alemão")
 cachorro1.ladrar()
