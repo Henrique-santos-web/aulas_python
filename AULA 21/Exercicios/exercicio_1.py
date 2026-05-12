@@ -1,6 +1,6 @@
 import sqlite3
 try:
-    conexao = sqlite3.connect("loja.db")
+    conexao = sqlite3.Connection("loja.db")
     cursor = conexao.cursor()
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS produtos (
