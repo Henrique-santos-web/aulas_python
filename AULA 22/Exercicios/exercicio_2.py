@@ -84,3 +84,4 @@ while True:
     #? Mas pq foi comentado essas def's? Foram, pois os produtos já foram criados (primeiro desafio era criar o banco de dados e cadastras os produtos, o segundo era chamar eles)
 
     update_produto()
+    # Ver com o professor pq aqui está dando: ERRO: Cannot operate on a closed database.
