@@ -91,8 +91,6 @@ def salvar_alteracoes(id_cliente, novo_nome, janela_secundaria):
     atualizar_lista_visual()
     janela_secundaria.destroy()
     
-    
-
 
 def abrir_janela_edicao():
     janela_edicao = ctk.CTkToplevel(janela)
